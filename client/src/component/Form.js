@@ -2,7 +2,7 @@ import React from 'react';
 
 function Form(props) {
   return (
-    <form>
+    <form className='m-3'>
       <input
         className='form-control'
         type='text'
@@ -11,7 +11,7 @@ function Form(props) {
         onChange={props.handleInputChange}
         required
       ></input>
-      <button onClick={props.handleFormSubmit} type='submit'>Search</button>
+      <button className='m-3' onClick={props.handleFormSubmit} type='submit'>Search</button>
     </form>
   );
 }
