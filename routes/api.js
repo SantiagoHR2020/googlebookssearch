@@ -17,7 +17,7 @@ router.get("/api/saved-books", (request, response) => {
       _id: mongoID,
     })
       .then((data) => {
-        response.status(200).end();
+        response.status(200);
       })
       .catch((error) => {
         response.status(404).send(error.message);
@@ -28,7 +28,7 @@ router.get("/api/saved-books", (request, response) => {
     const bookData = request.body;
     Book.create(bookData)
       .then(function () {
-        response.status(200).end();
+        response.status(200);
       })
       .catch(function (error) {
         response.status(404).send(error.message);
