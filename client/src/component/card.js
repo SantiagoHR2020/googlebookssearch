@@ -1,7 +1,13 @@
 import React from 'react';
-
+import api from '../utils/api';
 function Card(props) {
   console.log(props);
+
+
+ const handleSave = ()=>{
+   console.log(props.book)
+api.saveBook(props.book)
+  }
 
   return (
     <div className='card m-4'>
@@ -15,7 +21,7 @@ function Card(props) {
           <h5>By: {props.book.volumeInfo.authors.join(', ')}</h5>
         </div>
         <div className='col-3'>
-          <button className='m-1'>Save</button>
+          <button className='m-1' onClick={handleSave}>Save</button>
           <button className='m-1'>
             <a href={props.book.volumeInfo.canonicalVolumeLink} target='_blank'>
               View
