@@ -6,7 +6,14 @@ function Card(props) {
 
  const handleSave = ()=>{
    console.log(props.book)
-api.saveBook(props.book)
+   const bookData ={
+     title:props.book.volumeInfo.title,
+     authors: props.book.volumeInfo.authors.join(', '),
+     description: props.book.volumeInfo.description,
+     thumbnail: props.book.volumeInfo.imageLinks.thumbnail,
+     link: props.book.volumeInfo.canonicalVolumeLink
+    }
+    api.saveBook(bookData).then(res => console.log('saved'))
   }
 
   return (

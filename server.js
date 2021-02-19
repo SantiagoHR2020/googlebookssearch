@@ -17,7 +17,7 @@ mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/googlebooks", {
 });
 
 // routes
-app.use(require("./routes/api.js"));
+app.use('/api/books', require("./routes/api.js"));
 
 // Server static assets in production
 if (process.env.NODE_ENV === "production") {

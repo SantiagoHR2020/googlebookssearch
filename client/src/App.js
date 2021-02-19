@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import React from 'react';
-import { HashRouter as Router, Route, Switch } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
 import SearchPage from './pages/searchPage';
 import NavBar from './component/navBar';
