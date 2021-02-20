@@ -11,7 +11,7 @@ const BookSchema = mongoose.Schema({
   description: {type: mongoose.Schema.Types.String},
   thumbnail: {type: mongoose.Schema.Types.String},
   link: {type: mongoose.Schema.Types.String},
-  id: {type: mongoose.Schema.Types.String},
+  
 });
 
 const Book = mongoose.model("Book", BookSchema);

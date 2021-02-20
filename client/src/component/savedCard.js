@@ -6,7 +6,7 @@ function savedCard(props) {
   const handleDelete = () => {
     console.log(props.book);
 
-    api.deleteBook(props.book.id).then((res) => console.log('deleted'));
+    api.deleteBook(props.book._id).then((res) => props.LoadBooks());
   };
 
   return (

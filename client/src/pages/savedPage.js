@@ -6,16 +6,20 @@ import SavedCard from '../component/savedCard';
 
 function SavedPage() {
   const [books, setBooks] = useState([]);
-  useEffect(async () => {
+  useEffect( () => {
+    LoadBooks()
+  }, []);
+
+ async function LoadBooks(){
     const res = await api.getSaveBook();
     setBooks(res.data);
-  }, []);
+  }
 
   return (
     <main>
       {books && books.length > 0 ? (
         books.map((book) => 
-        <SavedCard key={book.id} book={book} />)
+        <SavedCard key={book.id} book={book} LoadBooks={LoadBooks} />)
       ) : (
         <h1>No books to display!</h1>
       )}
